@@ -1,0 +1,83 @@
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('smk2.jpg'); /* Replace with your desired background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+    }
+    /* Header styles */
+    .header {
+      background-color: rgba(75, 0, 130, 0.8); /* Semi-transparent background */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header .logo img {
+      height: 100px;
+    }
+    .header .menu {
+      display: flex;
+      gap: 20px;
+    }
+    .header .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .header .menu a:hover {
+      text-decoration: underline;
+    }
+    /* Banner styles */
+    .banner {
+      text-align: center;
+      padding: 150px 20px;
+      background: rgba(0, 0, 0, 0.5); /* Transparent overlay for text visibility */
+    }
+    .banner h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .banner button {
+      margin-top: 20px;
+      background-color: #ffffff;
+      color: #4b0082;
+      border: 2px solid #4b0082;
+      padding: 12px 30px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .banner button:hover {
+      background-color: #4b0082;
+      color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+    .banner button:active {
+      transform: scale(0.95);
+    }
+    /* Location Section */
+    .location {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+      color: #4b0082;
+    }
+    .location h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .location img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
