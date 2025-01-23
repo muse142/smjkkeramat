@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Achievements</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('smk2.jpg'); /* Replace with your desired background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    /* Header styles */
+    .header {
+      background-color: rgba(75, 0, 130, 0.8); /* Semi-transparent background */
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    .header .logo {
+      margin-right: 20px;
+    }
+    .header .logo img {
+      height: 80px;
+    }
+    .header .title {
+      color: white;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    /* Navigation styles */
+    nav {
+      background-color: rgba(75, 0, 130, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: white;
+      color: #4b0082;
+    }
+    /* Flashcard Section */
+    .flashcard-section {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+      color: #4b0082;
+    }
+    .flashcard-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .flashcard-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .flashcard {
+      background: rgba(75, 0, 130, 0.1);
+      width: 200px;
+      height: 300px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard:hover .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .flashcard-front {
+      background-color: white;
+      color: #4b0082;
+    }
+    .flashcard-back {
+      background-color: #4b0082;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .flashcard img {
+      width: 100%;
+      height: 150px; /* Set a fixed height for images */
+      object-fit: cover; /* Ensure images cover the area without distortion */
+      border-radius: 10px 10px 0 0;
+    }
+    .flashcard p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #4b0082;
+    }
+    .flashcard-back p {
+      color: white;
+    }
+    .back-button {
+      position: fixed;
+      top: 110px;
+      left: 20px;
+      background-color: #ffffff;
+      color: #4b0082;
+      border: 2px solid #4b0082;
+      padding: 8px 20px;
+      font-size: 0.9em;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+    .back-button:hover {
+      background-color: #4b0082;
+      color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+    .back-button:active {
+      transform: scale(0.95);
+    }
+    /* Footer styles */
+    .footer {
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(75, 0, 130, 0.9); /* Matching header color */
+      color: white;
+    }
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+    /* Audio section styles */
+    .audio-section {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #4b0082;
+    }
+    .audio-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.8em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <div class="logo">
+      <img src="smk.jpg" alt="School Logo"> <!-- Replace with actual logo URL -->
+    </div>
+    <div class="title">Academic Achievements</div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="admin.html">Admin</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="facility.html">Facility</a></li>
+    </ul>
+
+  <!-- Flashcard Section -->
+  <div class="flashcard-section">
+    <h2>Outstanding Academic Milestones</h2>
+    <div class="flashcard-container">
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <img src="achievement 1.jpg" alt="2020 Festival Kesenian Muzik"> <!-- Replace with actual image URL -->
+            <p>2020 Festival Kesenian Muzik</p>
+          </div>
+          <div class="flashcard-back">
+            <p>In this competition, our school team had sent an ochestra team that we been trained hard. All the students, hardwork lead us to runner up of the competition. The student win 		a medal and a certificate</p>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <img src="achievement 2.jpg" alt="2020 School Marching Competition"> <!-- Replace with actual image URL -->
+            <p>2020 School Marching Competition</p>
+          </div>
+          <div class="flashcard-back">
+            <p>Our school held a marching competition to make our students more discpline and fit. This competition went very well as the student all partake with high spirit. The winner of the marching competition is the Kadet Remaja Sekolah Unit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <img src="achievement 3.jpg" alt="2016 Basketball Zone Competition"> <!-- Replace with actual image URL -->
+            <p>2016 Basketball Zone Competition</p>
+          </div>
+          <div class="flashcard-back">
+            <p>Our school team had sent 1 team to participate in 2016 Basketball Zone Competition among all penang school. The hard work pay off because we win first place at the competition through all the students hard training.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <img src="achievement 4.jpg" alt="2021 Earth Day competition"> <!-- Replace with actual image URL -->
+            <p>2021 Earth Day competition</p>
+          </div>
+          <div class="flashcard-back">
+            <p>Earth day competition want school to make green innovation to save mother earth. Our school team make an innovation using clay as a model. We got 4th place as other competitor had more experience</p>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <img src="achievement 5.jpg" alt="FIRST Tech Challenge"> <!-- Replace with actual image URL -->
+            <p>FIRST Tech Challenge</p>
+          </div>
+          <div class="flashcard-back">
+            <p>This competition need us to jusitfy our innovation of sciences and how it benefit mankind. Our innovation shooks the judges thus earning our winner title</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Section -->
+  <div class="audio-section">
+    <h3>Enjoy Our School Anthem</h3>
+    <audio controls>
+      <source src="school_anthem.mp3" type="audio/mpeg"> <!-- Replace with actual audio file URL -->
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; 2025 SMJK Dato Keramat | All Rights Reserved</p>
+  </div>
+</body>
+</html>
+
+
+
+

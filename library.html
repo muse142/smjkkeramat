@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('library2.jpg'); /* Replace with your background image */
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: rgba(75, 0, 130, 0.8); /* Semi-transparent purple */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .header .logo img {
+      height: 50px;
+    }
+
+    .header .details {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .details span {
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    /* Navigation styles */
+    nav {
+      background-color: rgba(75, 0, 130, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: white;
+      color: #4b0082;
+    }
+
+    /* Search box */
+    .search-box {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .search-box h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .search-tabs button {
+      background-color: white;
+      color: #4b0082;
+      font-weight: bold;
+      border: 2px solid #4b0082;
+      padding: 10px 25px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .search-tabs button:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    .search-input {
+      margin-top: 20px;
+    }
+
+    .search-input input[type="text"] {
+      padding: 12px 20px;
+      width: 60%;
+      border: 2px solid #4b0082;
+      border-radius: 5px;
+      font-size: 1em;
+      margin-right: 10px;
+    }
+
+    .search-input button {
+      padding: 12px 30px;
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .search-input button:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Newspaper section */
+    .newspaper-section {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #4b0082;
+      margin-top: 30px;
+    }
+
+    .newspaper-section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .newspaper-section p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    .newspaper-section a {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #4b0082;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+
+    .newspaper-section a:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(75, 0, 130, 0.9);
+      color: white;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <img src="smk.jpg" alt="SMJK Logo">
+    </div>
+    <div class="details">
+      <span>SMJK Dato Keramat</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="admin.html">Admin</a></li>
+      <li><a href="academic.html">Academic</a></li>
+      <li><a href="facility.html">Facility</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search Section -->
+  <div class="search-box" id="search">
+    <h1>Search Library Collections</h1>
+    <div class="search-tabs">
+      <button>Basic Search</button>
+      <button>Advanced Search</button>
+    </div>
+    <div class="search-input">
+      <input type="text" placeholder="Search library collections with library discovery services">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- Newspaper Section -->
+  <div class="newspaper-section" id="newspaper">
+    <h2>Read the Latest News</h2>
+    <p>Stay informed with our featured newspaper collection. Click below to explore.</p>
+    <a href="https://www.nst.com.my/" target="_blank">Go to Newspaper</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SMJK Dato Keramat | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
+
+

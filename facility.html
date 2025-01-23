@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Facility Rental</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('smk2.jpg'); /* Replace with your desired background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: rgba(75, 0, 130, 0.8);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header .logo img {
+      height: 80px;
+    }
+
+    .header .back-button {
+      margin-top: 10px;
+      background-color: #ffffff;
+      color: #4b0082;
+      border: 2px solid #4b0082;
+      padding: 8px 20px;
+      font-size: 0.9em;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .header .back-button:hover {
+      background-color: #4b0082;
+      color: white;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Navigation styles */
+    nav {
+      background-color: rgba(75, 0, 130, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: white;
+      color: #4b0082;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: #4b0082;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 10px;
+      margin-right: 600px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #4b0082;
+    }
+
+    .facility-options {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .facility-option {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .facility-option img {
+      max-width: 150px;
+      max-height: 150px;
+      width: 100%;
+      height: auto;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      transition: border-color 0.3s, transform 0.3s ease;
+    }
+
+    .facility-option img:hover {
+      transform: scale(1.05);
+    }
+
+    .facility-option img.selected {
+      border-color: #4b0082;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .booking-form label {
+      font-weight: bold;
+    }
+
+    .booking-form input,
+    .booking-form button {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .booking-form button {
+      background-color: #4b0082;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background-color: white;
+      color: #4b0082;
+      border: 2px solid #4b0082;
+    }
+
+    .total-cost {
+      font-weight: bold;
+      color: #4b0082;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: rgba(75, 0, 130, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function selectFacility(facility) {
+      document.getElementById('facility').value = facility;
+      document.querySelectorAll('.facility-option img').forEach(img => img.classList.remove('selected'));
+      document.getElementById(facility + '-img').classList.add('selected');
+    }
+
+    function showPopup(message) {
+      alert(message);
+    }
+
+    function calculateTotal() {
+      const hours = document.getElementById('hours').value;
+      const total = hours * 2;
+      document.getElementById('total').textContent = 'Total Cost: RM ' + total;
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      showPopup("Booking Successful");
+    }
+  </script>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <div class="logo">
+      <img src="smk.jpg" alt="School Logo"> <!-- Replace with actual logo URL -->
+      <a href="index.html" class="back-button">Back</a>
+    </div>
+    <h1>School Facility Rental</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="admin.html">Admin</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="academic.html">Academic</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <p>Welcome to our school facility rental page. You can book our facilities for various events and activities. The rental rate is <span class="price">RM 2 per hour</span>.</p>
+
+    <div class="facility-options">
+      <div class="facility-option" onclick="selectFacility('badminton-court')">
+        <img id="badminton-court-img" src="badminton.jpg" alt="Badminton Court"> <!-- Replace with actual image URL -->
+        <p>Badminton Court</p>
+      </div>
+      <div class="facility-option" onclick="selectFacility('football-field')">
+        <img id="football-field-img" src="football.jpg" alt="Football Field"> <!-- Replace with actual image URL -->
+        <p>Football Field</p>
+      </div>
+    </div>
+
+    <form class="booking-form" onsubmit="handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="hours">Number of Hours:</label>
+      <input type="number" id="hours" name="hours" oninput="calculateTotal()" required>
+
+      <input type="hidden" id="facility" name="facility" required>
+      
+      <div class="total-cost" id="total">Total Cost: RM 0</div>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+
+
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; 2025 SMJK Dato Keramat | All Rights Reserved</p>
+</html>
+
+
+

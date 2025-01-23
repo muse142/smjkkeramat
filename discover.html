@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Organizational Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('smk2.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: rgba(75, 0, 130, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #4b0082;
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgba(75, 0, 130, 0.9); /* Semi-transparent indigo */
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        /* Back button styles */
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4b0082; /* Indigo background */
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 25px;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: #4b0082;
+        }
+
+        /* Main section */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light transparent white */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4b0082;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .org-chart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .org-card {
+            text-align: center;
+            padding: 20px;
+            background-color: #e6f2ff; /* Light blue */
+            border: 2px solid #b3d7ff;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .org-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #4b0082;
+        }
+
+        .org-card h3 {
+            margin: 10px 0 5px;
+            color: #4b0082;
+        }
+
+        .org-card p {
+            color: #333;
+        }
+
+        .vision-mission {
+            margin: 40px 0;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #4b0082;
+            border-left: 5px solid #4b0082;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        blockquote h3 {
+            margin-bottom: 10px;
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(75, 0, 130, 0.9); /* Matching header color */
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+	
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="facility.html">Facility</a></li>
+            <li><a href="academic.html">Academic</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="javascript:history.back()">Back</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+<header>
+    <img src="smk.jpg" alt="School Logo" style="width: 100px; height: auto; margin-bottom: 20px;">
+    <h1>Our School Organization</h1>
+    <p>Meet the team that leads our school towards excellence.</p>
+</header>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Vision and Mission Section -->
+        <section id="vision-mission" class="vision-mission">
+            <blockquote>
+                <h3>Our Vision</h3>
+                <p>"To nurture globally competitive students through innovation, excellence, and collaboration."</p>
+            </blockquote>
+            <blockquote>
+                <h3>Our Mission</h3>
+                <p>"To provide a supportive and inclusive learning environment that inspires students to achieve their full potential while upholding core values of integrity, responsibility, and respect."</p>
+            </blockquote>
+        </section>
+
+        <!-- Organizational Chart Section -->
+        <h2 id="org-chart">Organizational Chart</h2>
+        <div class="org-chart">
+            <div class="org-card">
+                <img src="p1.png" alt="Principal">
+                <h3>Principal</h3>
+                <p>NUR ERDINA HAFLIN BINTI ELIAS</p>
+            </div>
+
+            <div class="org-card">
+                <img src="p2.png" alt="Vice Principal">
+                <h3>Vice Principal</h3>
+                <p>MUHAMMAD FAHIM BIN JOHARI</p>
+            </div>
+
+            <div class="org-card">
+                <img src="p3.png" alt="Coordinator">
+                <h3>Coordinator</h3>
+                <p>MOHAMAD MUSTAQIM BIN AZLI</p>
+            </div>
+
+            <div class="org-card">
+                <img src="p4.jpeg" alt="Teacher">
+                <h3>Senior Teacher</h3>
+                <p>ZULAIHA BINTI ZULKHAIRE @ FUAD</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 SMJK Dato Keramat | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+
+
+
+
